@@ -14,7 +14,8 @@
 				<input type="text" name="num1"> - <input type="text" name="num2">
 				<button type="submit">=</button>
 			</p>
-			<p th:text="${result}"></p>			
+			<!-- th:ifで条件分岐 result=nullの場合は<p>タグ要素全体を無視する-->
+			<p th:if="${result != null}" th:text="${result}"></p>			
 		</form>
 		
 	</body>

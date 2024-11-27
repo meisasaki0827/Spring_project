@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="utf-8">
+		<title>計算機</title>
+	</head>
+	
+	<body>
+		<h1>計算機</h1>
+		
+		<form action="calculation" method="get">
+			<p>
+				<input type="text" name="num1">				
+				<select name="select">
+					<option value="plus">+</option>
+					<option value="minus">-</option>
+					<option value="multi">×</option>
+					<option value="quo">÷</option>					
+				</select>				
+				<input type="text" name="num2">				
+				<button type="submit">=</button>
+			</p>
+			
+			<!-- th:ifで条件分岐 result=nullの場合は<p>タグ要素全体を無視する-->
+			<p th:if="${result != null}" th:text="${result}"></p>			
+		</form>
+	</body>
+</html>
